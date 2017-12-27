@@ -1,0 +1,28 @@
+buildscript {
+    ext.kotlin_version = '1.0.3'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile 'de.jodamob.android:SuperReflect:1.0.1'
+    testCompile 'org.mockito:mockito-all:1.9.5'
+    testCompile 'junit:junit:4.12'
+    testCompile "org.amshove.kluent:kluent:1.27"
+
+}
