@@ -1,6 +1,7 @@
 [![Release](https://jitpack.io/v/dpreussler/android-tdd-utils.svg)](https://jitpack.io/#dpreussler/KuperReflect)
 [![Build Status](https://travis-ci.org/dpreussler/KuperReflect.svg?branch=master)](https://travis-ci.org/dpreussler/KuperReflect)
-[![Coverage Status](https://coveralls.io/repos/github/dpreussler/KuperReflect/badge.svg)](https://coveralls.io/github/dpreussler/KuperReflect)
+[![codecov](https://codecov.io/gh/dpreussler/KuperReflect/branch/master/graph/badge.svg)](https://codecov.io/gh/dpreussler/KuperReflect)
+
 
 # KuperReflect
 Easy reflection with Kotlin
