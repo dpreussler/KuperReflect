@@ -33,6 +33,15 @@ class KuperReflectBuilderTest {
     }
 
     @Test
+    fun `should use property with on syntax`() {
+        val tested = SomeClass()
+
+        on(tested) set SomeClass::variable to "something"
+
+        tested.variable `should equal to` "something"
+    }
+
+    @Test
     fun `should use string`() {
         val tested = SomeClass().apply {
             set("variable") to "something"
