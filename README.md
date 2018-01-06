@@ -1,3 +1,4 @@
+[![Release](https://jitpack.io/v/dpreussler/android-tdd-utils.svg)](https://jitpack.io/#dpreussler/KuperReflect)
 [![Build Status](https://travis-ci.org/dpreussler/KuperReflect.svg?branch=master)](https://travis-ci.org/dpreussler/KuperReflect)
 [![Coverage Status](https://coveralls.io/repos/github/dpreussler/KuperReflect/badge.svg)](https://coveralls.io/github/dpreussler/KuperReflect)
 
@@ -6,9 +7,9 @@ Easy reflection with Kotlin
 
 
 ## in short
-set private and final variables
-syntax comparable to Kotlin Reflect (no dependency to it)
-infix notation available
+- set private and final variables
+- syntax comparable to Kotlin Reflect (no dependency to it)
+- infix notation available
 
 
 ## in detail
@@ -59,12 +60,23 @@ KuperReflect combines both worlds: nice syntax including more variations and bei
 ### use infix all the way:
 
 ```kotlin
-        on(myClass) set "variable" to "something"
+    on(myClass) set "variable" to "something"
         
-        on(myClass) set SomeClass::variable to "something"
+    on(myClass) set SomeClass::variable to "something"
 
 ```
 
 
+## Gradle
+
+```groovy
+...
+repositories {
+    maven {url "https://jitpack.io"}
+}
+
+testCompile 'com.github.dpreussler:KuperReflect:v0.1'
+
+```
 
 
