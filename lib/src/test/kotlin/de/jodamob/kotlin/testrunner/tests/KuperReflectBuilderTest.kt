@@ -3,6 +3,7 @@ package de.jodamob.kotlin.testrunner.tests
 import de.jodamob.kotlin.reflect.on
 import de.jodamob.kotlin.reflect.set
 import de.jodamob.kotlin.reflect.to
+import de.jodamob.reflect.SuperReflect
 import org.amshove.kluent.`should equal to`
 import org.junit.Test
 
@@ -12,6 +13,9 @@ class KuperReflectBuilderTest {
     class SomeClass {
         val variable = "nothing"
         val variable2 = 100
+        private val variable3 = 101
+
+        fun getVar3() = variable3
     }
 
     @Test
@@ -79,4 +83,25 @@ class KuperReflectBuilderTest {
         tested.variable `should equal to` "something"
     }
 
+    @Test
+    fun `should set private string`() {
+        val tested = SomeClass().apply {
+            set("variable3") to 103
+        }
+        tested.getVar3() `should equal to` 103
+    }
+
+    @Test
+    fun `should set private java string`() {
+        val tested = SomeJavaClass().apply {
+            set("variable1") to "changed"
+        }
+        tested.one `should equal to` "changed"
+    }
+
+    @Test
+    fun `should set private java static string`() {
+        SuperReflect.on(SomeJavaClass::class.java).set("variable2", "changed")
+        SomeJavaClass.getTwo() `should equal to` "changed"
+    }
 }

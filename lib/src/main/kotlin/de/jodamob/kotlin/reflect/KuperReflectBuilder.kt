@@ -15,4 +15,10 @@ fun <U,V, W> U.set(prop: KProperty1<U, V>, value: W) = Pair(this, prop.name).to(
 
 fun <U,V, W> KProperty1<U, V>.set(instance: U, value: W) = Pair(instance, this.name).to(value)
 
-infix fun <T>Pair<T, String>.to(value: Any?) = SuperReflect.on(first).set(second, value)
+infix fun <T>Pair<T, String>.to(value: Any?) {
+    if (first is Class<*>) {
+        SuperReflect.on(first as Class<*>).set(second, value)
+    } else {
+        SuperReflect.on(first).set(second, value)
+    }
+}
