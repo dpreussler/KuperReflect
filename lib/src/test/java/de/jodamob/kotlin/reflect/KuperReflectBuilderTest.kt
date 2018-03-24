@@ -1,6 +1,5 @@
 package de.jodamob.kotlin.reflect
 
-import de.jodamob.reflect.SuperReflect
 import org.amshove.kluent.`should equal to`
 import org.junit.Test
 
@@ -98,7 +97,7 @@ class KuperReflectBuilderTest {
 
     @Test
     fun `should set private java static string`() {
-        SuperReflect.on(SomeJavaClass::class.java).set("variable2", "changed")
+        SomeJavaClass::class.java.set("variable2").to("changed")
         SomeJavaClass.getTwo() `should equal to` "changed"
     }
 }
