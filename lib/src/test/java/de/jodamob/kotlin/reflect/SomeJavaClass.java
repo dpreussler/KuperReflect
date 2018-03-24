@@ -1,4 +1,4 @@
-package de.jodamob.kotlin.testrunner.tests;
+package de.jodamob.kotlin.reflect;
 
 
 public class SomeJavaClass {

@@ -1,8 +1,5 @@
-package de.jodamob.kotlin.testrunner.tests
+package de.jodamob.kotlin.reflect
 
-import de.jodamob.kotlin.reflect.on
-import de.jodamob.kotlin.reflect.set
-import de.jodamob.kotlin.reflect.to
 import de.jodamob.reflect.SuperReflect
 import org.amshove.kluent.`should equal to`
 import org.junit.Test
@@ -93,7 +90,7 @@ class KuperReflectBuilderTest {
 
     @Test
     fun `should set private java string`() {
-        val tested = SomeJavaClass().apply {
+        val tested = de.jodamob.kotlin.reflect.SomeJavaClass().apply {
             set("variable1") to "changed"
         }
         tested.one `should equal to` "changed"
